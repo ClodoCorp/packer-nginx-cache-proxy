@@ -28,8 +28,7 @@ rebuild_config() {
 
     for unit in `relation-list -r $backend_id`; do
       # TIME TO SWIM!
-      echo "  server $(relation-get -r $backend_id private-address $unit):$(relation-get -r $backend_id port $unit);" >> $backend_list
-      web_path=`relation-get -r $backend_id path $unit`
+      echo "  server $(relation-get -r $backend_id hostname $unit):$(relation-get -r $backend_id port $unit);" >> $backend_list
     done
 
     echo "}" >> $backend_list
@@ -41,7 +40,6 @@ rebuild_config() {
       PROXY_CACHE=""
     fi
 
-    export WEB_PATH="${web_path:-/}"
     export PROXY_CACHE
 
     cheetah fill --env --stdout tpl/backend.tpl >> $backend_locations

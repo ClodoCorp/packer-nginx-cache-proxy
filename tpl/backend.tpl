@@ -1,4 +1,4 @@
-  location /$BACKEND {
+  location /$BACKEND/ {
     set \$no_cache "";
 
     if (\$request_method !~ ^(GET|HEAD)\$) {
@@ -17,7 +17,7 @@
     proxy_no_cache \$no_cache;
     proxy_cache_bypass \$no_cache;
 
-    proxy_redirect   http://$BACKEND $WEB_PATH;
+    rewrite ^/${BACKEND}(/?.*)$ \$1 break;
     proxy_pass  http://$BACKEND/;
     $PROXY_CACHE
 

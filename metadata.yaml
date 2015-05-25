@@ -1,4 +1,4 @@
-name: nginx-proxy
+name: nginx
 summary: configure nginx as a loadbalancer, micro-cache, and reverse-proxy
 maintainer: Marco Ceppi <marco@ceppi.net>
 description: |

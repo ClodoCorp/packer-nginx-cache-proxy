@@ -1,4 +1,4 @@
 #!/bin/bash
 
-apt-get install -y nginx-full
+apt-get install -y nginx-full python-cheetah
 mkdir -p /mnt/ramdisk/
