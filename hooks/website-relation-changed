@@ -1,0 +1,16 @@
+#!/bin/bash
+
+. lib/common.sh
+
+backend=${JUJU_REMOTE_UNIT%%/*}
+
+if [ -z $backend ]; then
+  juju-log "Seriously, this should actually never happen. This is an out of band call and I'm throwing an error because I can!"
+  exit 1
+fi
+
+if [ ! -f backends/$backend ]; then
+  echo "$JUJU_RELATION_ID" > backends/$backend
+fi
+
+rebuild_config

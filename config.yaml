@@ -1,0 +1,13 @@
+options:
+  default-route:
+    type: string
+    default: ""
+    description: "Which route should be loaded when / is accessed."
+  port:
+    type: int
+    default: 80
+    description: Port the loadbalancer should respond on
+  cache:
+    type: boolean
+    default: false
+    description: Turn on microcache for requests?

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eux
+
+. lib/common.sh
+
+# Pythonify this
+rebuild_config
+
+open-port `config-get port`

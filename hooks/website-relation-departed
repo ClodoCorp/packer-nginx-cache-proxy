@@ -1,0 +1,7 @@
+#!/bin/bash
+
+. lib/common.sh
+
+# This will do the cleanup for us, since we no longer have a JUJU_REMOTE_UNIT we don't know which backend is departing.
+# Well, we can't easily find out
+rebuild_config

@@ -1,0 +1,13 @@
+name: nginx-proxy
+summary: configure nginx as a loadbalancer, micro-cache, and reverse-proxy
+maintainer: Marco Ceppi <marco@ceppi.net>
+description: |
+  Places nginx-full and acts as a loadbalancer, lightweight cache, and reverse-proxy
+categories:
+  - cache-proxy
+provides:
+  websites:
+    interface: http
+requires:
+  website:
+    interface: http

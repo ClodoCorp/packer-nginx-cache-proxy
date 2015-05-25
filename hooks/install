@@ -1,0 +1,4 @@
+#!/bin/bash
+
+apt-get install -y nginx-full
+mkdir -p /mnt/ramdisk/
